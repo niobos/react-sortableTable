@@ -15,6 +15,8 @@ type ColumnConfig<TItem = object> = {
 interface SortableTableProps<TItem = object> {
     columns: ColumnConfig<TItem>[],
     data: TItem[],
+    initialSortColumnNr?: number | null,
+    initialSortDir?: 1 | -1,
 }
 
 export default function SortableTable<TItem = object>(props: SortableTableProps<TItem>) {
@@ -29,8 +31,8 @@ export default function SortableTable<TItem = object>(props: SortableTableProps<
      *     - classList: string, string[] or f(item): string[]
      *     - style: object or f(item): object
      */
-    const [sortColumnNr, setSortColumnNr] = useState(null);
-    const [sortDir, setSortDir] = useState(1);
+    const [sortColumnNr, setSortColumnNr] = useState(props.initialSortColumnNr ?? null);
+    const [sortDir, setSortDir] = useState(props.initialSortDir ?? 1);
 
     const columns = [];
     for(let column of props.columns || []) {
