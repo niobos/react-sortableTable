@@ -178,7 +178,7 @@ export default function SortableTable<TItem = object>(props: SortableTableProps<
 
     return <table className="sortableTable">
         <thead>
-        {columnHeaders.map<React.ReactNode>(v => <tr>{v}</tr>)
+        {columnHeaders.map<React.ReactNode>((v, i) => <tr key={i}>{v}</tr>)
             .reduce((prev, cur) => [prev, cur])}
         </thead>
         <tbody>{rows}</tbody>
