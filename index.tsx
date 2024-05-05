@@ -5,7 +5,7 @@ import './index.css';
 import innerText from "react-innertext";
 
 export type DataColumnConfig<TItem = object> = {
-    value: (item: TItem) => string | ReactElement,
+    value: (item: TItem) => string | ReactElement | number | boolean,
     cmp?: (a: TItem, b: TItem) => number,
     classList?: string | string[] | ((item: TItem) => string[]),
     style?: CSSProperties | ((item: TItem) => CSSProperties),
