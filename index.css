@@ -1,7 +1,7 @@
 table.sortableTable thead {
     position: sticky;
     top: 1px;
-    background-color: #ffffffd0;
+    background-color: rgb(from var(--background-color, #ffffff) r g b / 0.80);
 }
 
 table.sortableTable th.sort.asc:after {
